@@ -1,0 +1,30 @@
+@import '~@angular/material/theming';
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$app-primary: mat-palette($mat-deep-purple);
+$app-accent:  mat-palette($mat-light-blue);
+$app-warn: mat-palette($mat-yellow);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$app-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
+
+@mixin text-input($color) {
+    ::ng-deep .mat-form-field,.mat-form-field-focused {            
+        .mat-form-field-label {
+            color: mat-color($color) !important;
+        }
+        .mat-form-field-underline {
+            background-color: mat-color($color) !important;
+        } 
+        .mat-form-field-ripple {
+            display: none;
+        }
+    }
+}

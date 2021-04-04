@@ -1,0 +1,60 @@
+<div class="container">
+    <form [formGroup]="registrationForm">
+        <mat-form-field class="input">
+            <mat-label>Email*</mat-label>
+            <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+            <mat-error style="color:red;" *ngIf="email.hasError('email') && !email.hasError('required')">
+                Please enter a valid email address
+            </mat-error>
+            <mat-error style="color:red;" *ngIf="email.hasError('required')">
+                Email is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input">
+            <mat-label>First Name*</mat-label>
+            <input type="text" matInput formControlName="firstName" placeholder="Ex. Jhon" >
+            <mat-error style="color:red;" *ngIf="numericCode.hasError('required')">
+                First Name is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input">
+            <mat-label>Last Name*</mat-label>
+            <input type="text" matInput formControlName="lastName" placeholder="Ex. Doe">
+            <mat-error style="color:red;" *ngIf="numericCode.hasError('required')">
+                Last Name is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input">
+            <mat-label>Phone number*</mat-label>
+            <input type="text" matInput formControlName="phone" placeholder="Ex. 023142134">
+            <mat-error style="color:red;" *ngIf="numericCode.hasError('required')">
+                Phone number is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input">
+            <mat-label>University numeric code*</mat-label>
+            <input type="text" matInput formControlName="numericCode" placeholder="Ex. RSL#2132RF0234">
+            <mat-error style="color:red;" *ngIf="numericCode.hasError('required')">
+                University numeric code is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input">
+            <mat-label>Password*</mat-label>
+            <input type="password" matInput formControlName="password">
+            <mat-error style="color:red;" *ngIf="numericCode.hasError('required')">
+                Password <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input">
+            <mat-label>Confirm Password*</mat-label>
+            <input type="password" matInput formControlName="confirmPassword">
+            <mat-error style="color:red;" *ngIf="numericCode.hasError('required')">
+                Password confirmation <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+    </form>
+    <div class="buttons">
+        <button [routerLink]="['/']" routerLinkActive="router-link-active"  mat-raised-button color="warn">Login</button>
+        <button mat-raised-button color="warn" (click)="SignUp()">Register</button>
+    </div>
+</div>

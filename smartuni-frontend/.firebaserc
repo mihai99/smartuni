@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "smartuni-927a2"
+  },
+  "targets": {
+    "smartuni-927a2": {
+      "hosting": {
+        "smartuni-frontend": [
+          "smartuni-927a2"
+        ]
+      }
+    }
+  }
+}
