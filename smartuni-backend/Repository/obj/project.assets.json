@@ -2252,7 +2252,7 @@
       ]
     },
     "Newtonsoft.Json/10.0.1": {
-      "sha512": "MOUhQfeI43upq9QiEv+7YYTDQPtEZEj9xB50MgplO1XF/aumP0f+TCYIHpZEmfsiahJJaXt/gdRFYLFEoF2VyQ==",
+      "sha512": "ebWzW9j2nwxQeBo59As2TYn7nYr9BHicqqCwHOD1Vdo+50HBtLPuqdiCYJcLdTRknpYis/DSEOQz5KmZxwrIAg==",
       "type": "package",
       "path": "newtonsoft.json/10.0.1",
       "hasTools": true,
@@ -4812,7 +4812,7 @@
       ]
     },
     "System.Security.Cryptography.Cng/4.5.0": {
-      "sha512": "O4tqXxWCD8y1IU1VTgzbuBFwoRahrADhDUxHjwezhHCsqyFNyQ5EytjWBxu0EsZuH14b4UO2pFkG063K2h/9Ug==",
+      "sha512": "WG3r7EyjUe9CMPFSs6bty5doUqT+q9pbI80hlNzo2SkPkZ4VTuZkGWjpp77JB8+uaL4DFPRdBsAY+DX3dBK92A==",
       "type": "package",
       "path": "system.security.cryptography.cng/4.5.0",
       "files": [
@@ -5767,24 +5767,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\BLAGA\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Mihai Blaga\\.nuget\\packages\\": {},
+    "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\BLAGA\\Desktop\\licenta\\smartuni-backend\\Repository\\Repository.csproj",
+      "projectUniqueName": "C:\\Users\\Mihai Blaga\\Desktop\\licents\\smartuni-backend\\Repository\\Repository.csproj",
       "projectName": "Repository",
-      "projectPath": "C:\\Users\\BLAGA\\Desktop\\licenta\\smartuni-backend\\Repository\\Repository.csproj",
-      "packagesPath": "C:\\Users\\BLAGA\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\BLAGA\\Desktop\\licenta\\smartuni-backend\\Repository\\obj\\",
+      "projectPath": "C:\\Users\\Mihai Blaga\\Desktop\\licents\\smartuni-backend\\Repository\\Repository.csproj",
+      "packagesPath": "C:\\Users\\Mihai Blaga\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mihai Blaga\\Desktop\\licents\\smartuni-backend\\Repository\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\BLAGA\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Mihai Blaga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -5797,8 +5801,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\BLAGA\\Desktop\\licenta\\smartuni-backend\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\BLAGA\\Desktop\\licenta\\smartuni-backend\\Domain\\Domain.csproj"
+            "C:\\Users\\Mihai Blaga\\Desktop\\licents\\smartuni-backend\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\Mihai Blaga\\Desktop\\licents\\smartuni-backend\\Domain\\Domain.csproj"
             }
           }
         }

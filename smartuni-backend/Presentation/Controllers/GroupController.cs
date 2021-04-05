@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Domain.Interfaces;
-using Domain;
 using Presentation.DTOs;
+using Domain.EntityMapers;
+
 
 namespace Presentation.Controllers
 {
@@ -23,15 +24,15 @@ namespace Presentation.Controllers
 		}
 
 		[HttpGet]
-		public IEnumerable<Group> Get()
+		public IEnumerable<MappedGroup> Get()
 		{
 			return groupService.GetAll();
 		}
 
 		[HttpPost]
-		public ActionResult<Group> CreateStudentAccount([FromBody] GroupDTO group)
+		public ActionResult<MappedGroup> CreateStudentAccount([FromBody] GroupDTO group)
 		{
-			Group createdGroup = groupService.CreateGroup(group.Name, group.Year);
+			MappedGroup createdGroup = groupService.CreateGroup(group.Name, group.Year);
 
 			if (createdGroup != null)
 			{
@@ -45,9 +46,9 @@ namespace Presentation.Controllers
 
 		[Route("update-students")]
 		[HttpPut]
-		public ActionResult<Group> UpdateGroupStudents([FromBody] GroupStudentsDTO groupStudents)
+		public ActionResult<MappedGroup> UpdateGroupStudents([FromBody] GroupStudentsDTO groupStudents)
 		{
-			Group updatedGroup = groupService.UpdateGroupStudents(groupStudents.groupId, groupStudents.studentIds);
+			MappedGroup updatedGroup = groupService.UpdateGroupStudents(groupStudents.groupId, groupStudents.studentIds);
 
 			if (updatedGroup != null)
 			{

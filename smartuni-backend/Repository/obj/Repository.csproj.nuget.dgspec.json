@@ -1,24 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\BLAGA\\Desktop\\licenta\\smartuni-backend\\Repository\\Repository.csproj": {}
+    "C:\\Users\\Mihai Blaga\\Desktop\\licents\\smartuni-backend\\Repository\\Repository.csproj": {}
   },
   "projects": {
-    "C:\\Users\\BLAGA\\Desktop\\licenta\\smartuni-backend\\Domain\\Domain.csproj": {
+    "C:\\Users\\Mihai Blaga\\Desktop\\licents\\smartuni-backend\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\BLAGA\\Desktop\\licenta\\smartuni-backend\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Mihai Blaga\\Desktop\\licents\\smartuni-backend\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\BLAGA\\Desktop\\licenta\\smartuni-backend\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\BLAGA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\BLAGA\\Desktop\\licenta\\smartuni-backend\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\Mihai Blaga\\Desktop\\licents\\smartuni-backend\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\Mihai Blaga\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mihai Blaga\\Desktop\\licents\\smartuni-backend\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\BLAGA\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Mihai Blaga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -61,21 +64,24 @@
         }
       }
     },
-    "C:\\Users\\BLAGA\\Desktop\\licenta\\smartuni-backend\\Repository\\Repository.csproj": {
+    "C:\\Users\\Mihai Blaga\\Desktop\\licents\\smartuni-backend\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\BLAGA\\Desktop\\licenta\\smartuni-backend\\Repository\\Repository.csproj",
+        "projectUniqueName": "C:\\Users\\Mihai Blaga\\Desktop\\licents\\smartuni-backend\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "C:\\Users\\BLAGA\\Desktop\\licenta\\smartuni-backend\\Repository\\Repository.csproj",
-        "packagesPath": "C:\\Users\\BLAGA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\BLAGA\\Desktop\\licenta\\smartuni-backend\\Repository\\obj\\",
+        "projectPath": "C:\\Users\\Mihai Blaga\\Desktop\\licents\\smartuni-backend\\Repository\\Repository.csproj",
+        "packagesPath": "C:\\Users\\Mihai Blaga\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mihai Blaga\\Desktop\\licents\\smartuni-backend\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\BLAGA\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Mihai Blaga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -88,8 +94,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\BLAGA\\Desktop\\licenta\\smartuni-backend\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\BLAGA\\Desktop\\licenta\\smartuni-backend\\Domain\\Domain.csproj"
+              "C:\\Users\\Mihai Blaga\\Desktop\\licents\\smartuni-backend\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Mihai Blaga\\Desktop\\licents\\smartuni-backend\\Domain\\Domain.csproj"
               }
             }
           }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Domain;
 using Domain.Interfaces;
+using Domain.EntityMapers;
 
 namespace Services
 {
@@ -18,33 +19,33 @@ namespace Services
 			this.groupRepository = groupRepository;
 			this.studentRepository = studentRepository;
 		}
-		public Group CreateGroup(string name, int year)
+		public MappedGroup CreateGroup(string name, int year)
 		{
 			var createdGroup = groupRepository.Create(Group.Create(name, year));
-			return createdGroup;
+			return createdGroup.Map();
 		}
 
-		public List<Group> GetAll()
+		public List<MappedGroup> GetAll()
 		{
-			return groupRepository.GetAll();
+			return groupRepository.GetAll().Select(x => x.Map()).ToList();
 		}
 
-		public Group GetById(string id)
+		public MappedGroup GetById(string id)
 		{
-			return groupRepository.GetById(id);
+			return groupRepository.GetById(id).Map();
 		}
 
-		public Group UpdateGroupStudents(string groupId, List<string> studentIds)
+		public MappedGroup UpdateGroupStudents(string groupId, List<string> studentIds)
 		{
 			var groupToUpdate = groupRepository.GetById(groupId);
 			var studentList = studentRepository.GetAll().Where(x => studentIds.Contains(x.Id)).ToList();
-			studentList.ForEach(x => {
+			/*studentList.ForEach(x => {
 				x.Group = groupToUpdate;
 				studentRepository.Update(x);
-			});
+			});*/
 			groupToUpdate.UpdateStudentList(studentList);
 			groupRepository.Update(groupToUpdate);
-			return groupToUpdate;
+			return groupToUpdate.Map();
 		}
 	}
 }

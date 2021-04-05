@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5oO67Vb/MOZ7KHPP54RgPhUfHYrPFZztn1TS/Oo50/a3npX5rJqzO8bqULGt99y7uhJMxI3vNApiWmv/9jkkQw==",
+  "dgSpecHash": "f22L7U1NWPqvKj6AugE+tCVYMja1lPNDse8LzZqz9bIGuCQztK3Sl5aDlVoxvkz/4bTuViIyJdvvGI5+Pv6aOQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\BLAGA\\Desktop\\licenta\\smartuni-backend\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\Mihai Blaga\\Desktop\\licents\\smartuni-backend\\Domain\\Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

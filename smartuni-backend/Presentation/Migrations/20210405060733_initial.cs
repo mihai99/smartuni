@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Presentation.Migrations
 {
@@ -10,7 +11,7 @@ namespace Presentation.Migrations
                 name: "Groups",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Year = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     GroupLeaderId = table.Column<string>(type: "nvarchar(max)", nullable: true)
@@ -30,7 +31,7 @@ namespace Presentation.Migrations
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     NumericCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    GroupId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    GroupId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {

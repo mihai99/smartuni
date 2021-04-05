@@ -29,6 +29,7 @@ namespace Domain
 
 		public List<Student> UpdateStudentList(List<Student> students)
 		{
+			students.ForEach(student => student.Group = this);
 			Students = students;
 			return Students;
 		}

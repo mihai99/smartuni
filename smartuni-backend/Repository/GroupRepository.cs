@@ -27,7 +27,7 @@ namespace Repository
 
 		public List<Group> GetAll()
 		{
-			return context.Set<Group>().ToList();
+			return context.Set<Group>().Include(x => x.Students).ToList();
 		}
 
 		public Group GetById(string id)

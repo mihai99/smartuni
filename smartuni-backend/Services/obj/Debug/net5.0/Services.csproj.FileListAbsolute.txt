@@ -15,3 +15,20 @@ C:\Users\BLAGA\Desktop\licenta\smartuni-backend\Services\bin\Debug\net5.0\Reposi
 C:\Users\BLAGA\Desktop\licenta\smartuni-backend\Services\bin\Debug\net5.0\Domain.pdb
 C:\Users\BLAGA\Desktop\licenta\smartuni-backend\Services\bin\Debug\net5.0\Repository.pdb
 C:\Users\BLAGA\Desktop\licenta\smartuni-backend\Services\obj\Debug\net5.0\Services.csproj.CopyComplete
+C:\Users\Mihai Blaga\Desktop\licents\smartuni-backend\Services\bin\Debug\net5.0\Services.deps.json
+C:\Users\Mihai Blaga\Desktop\licents\smartuni-backend\Services\bin\Debug\net5.0\Services.dll
+C:\Users\Mihai Blaga\Desktop\licents\smartuni-backend\Services\bin\Debug\net5.0\ref\Services.dll
+C:\Users\Mihai Blaga\Desktop\licents\smartuni-backend\Services\bin\Debug\net5.0\Services.pdb
+C:\Users\Mihai Blaga\Desktop\licents\smartuni-backend\Services\bin\Debug\net5.0\Domain.dll
+C:\Users\Mihai Blaga\Desktop\licents\smartuni-backend\Services\bin\Debug\net5.0\Repository.dll
+C:\Users\Mihai Blaga\Desktop\licents\smartuni-backend\Services\bin\Debug\net5.0\Domain.pdb
+C:\Users\Mihai Blaga\Desktop\licents\smartuni-backend\Services\bin\Debug\net5.0\Repository.pdb
+C:\Users\Mihai Blaga\Desktop\licents\smartuni-backend\Services\obj\Debug\net5.0\Services.csprojAssemblyReference.cache
+C:\Users\Mihai Blaga\Desktop\licents\smartuni-backend\Services\obj\Debug\net5.0\Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mihai Blaga\Desktop\licents\smartuni-backend\Services\obj\Debug\net5.0\Services.AssemblyInfoInputs.cache
+C:\Users\Mihai Blaga\Desktop\licents\smartuni-backend\Services\obj\Debug\net5.0\Services.AssemblyInfo.cs
+C:\Users\Mihai Blaga\Desktop\licents\smartuni-backend\Services\obj\Debug\net5.0\Services.csproj.CoreCompileInputs.cache
+C:\Users\Mihai Blaga\Desktop\licents\smartuni-backend\Services\obj\Debug\net5.0\Services.csproj.CopyComplete
+C:\Users\Mihai Blaga\Desktop\licents\smartuni-backend\Services\obj\Debug\net5.0\Services.dll
+C:\Users\Mihai Blaga\Desktop\licents\smartuni-backend\Services\obj\Debug\net5.0\ref\Services.dll
+C:\Users\Mihai Blaga\Desktop\licents\smartuni-backend\Services\obj\Debug\net5.0\Services.pdb
