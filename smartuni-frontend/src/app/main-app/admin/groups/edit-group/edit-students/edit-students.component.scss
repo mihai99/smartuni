@@ -1,0 +1,31 @@
+@import "../../../../../../assets/styles.scss";
+
+.container {
+    background: mat-color($app-accent);
+    box-shadow: 4px 4px 4px 4px #1D73F4;
+    .title {
+        padding: 12px 8px;
+        font-size: 18px;
+        padding-bottom: 4px;
+        color: mat-color($app-warn);
+        font-weight: 500;
+    }
+    .all-students {
+        padding: 4px;
+        min-width: 304px;
+        .student-container {
+            background: mat-color($app-primary);
+            display: flex;
+            padding: 0px 8px;
+            margin: 4px 0px;
+            color: mat-color($app-warn);
+            align-items: center;
+            span {
+                flex-grow: 1;
+            }
+        }
+        button.add-students {
+            width: 100%;
+        }
+    }
+}

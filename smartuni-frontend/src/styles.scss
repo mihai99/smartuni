@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import './assets/styles.scss';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -19,3 +20,20 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     color: rgb(255 255 255) !important;
     font-size: 16px !important;
 }
+
+.input {
+    font-size: 16px;
+    width: 100%;
+    color: mat-color($app-warn);
+    }
+
+ :root {
+    .cdk-overlay-backdrop.modal.cdk-overlay-backdrop-showing {
+        background: #404040c2 !important;
+    }
+     mat-dialog-container {
+         background: mat-color($app-primary) !important;
+         color: mat-color($app-warn) !important;
+     }
+     
+ } 

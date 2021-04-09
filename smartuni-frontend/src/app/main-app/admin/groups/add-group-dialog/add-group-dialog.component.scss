@@ -1,0 +1,9 @@
+@import "../../../../../assets/styles.scss";
+
+.input-field {
+    font-size: 18px;
+}
+
+
+@include text-input($app-warn);
+@include select-input($app-warn);

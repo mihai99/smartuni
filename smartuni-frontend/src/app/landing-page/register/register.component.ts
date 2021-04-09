@@ -36,6 +36,8 @@ export class RegisterComponent implements OnInit {
       if (result) {
         this._notifications.ShowInfo("Account created, you can now login");
         this._rotuer.navigate(['']);
+      } else {
+        this._notifications.ShowError("Error creating your account, please try again")
       }
     });
   }

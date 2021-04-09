@@ -1,0 +1,18 @@
+<div class="container">
+    <p class="title">{{students.length}} Students</p>
+    <div class="all-students">
+        <div *ngFor="let student of students"  class="student-container">
+            <span>{{student.firstName}} {{student.lastName}}</span>
+            <button mat-icon-button>
+                <mat-icon>stars</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon>swap_horiz</mat-icon>
+            </button>
+            <button mat-icon-button (click)="removeStudent(student.id)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+        <button mat-raised-button color="accent" class="add-students" (click)="openDialog()">Add students</button>
+    </div>
+</div>

@@ -26,5 +26,31 @@ $app-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
         .mat-form-field-ripple {
             display: none;
         }
+        .mat-form-field-flex {
+            padding: .75em .25em 0 0.45em;
+        }
+    }
+}
+
+@mixin select-input($color) {
+    ::ng-deep .mat-form-field,.mat-form-field-focused {            
+        .mat-form-field-label {
+            color: mat-color($color) !important;
+            font-size: 18px;
+            font-weight: 100;
+        }
+        .mat-form-field-underline::before {
+            background-color: mat-color($color) !important;
+        } 
+        .mat-select-value {
+            color:  mat-color($color) !important;
+            font-size: 18px;
+        }
+        .mat-select-arrow {
+            color:  mat-color($color) !important;
+        }
+        .mat-form-field-ripple {
+            display: none;
+        }
     }
 }

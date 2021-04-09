@@ -12,7 +12,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { RegisterComponent } from './landing-page/register/register.component';
 import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './landing-page/login/login.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
@@ -24,6 +24,15 @@ import { StudentDashboardComponent } from './main-app/student/student-dashboard/
 import { StudentHeaderComponent } from './main-app/student/student-header/student-header.component';
 import { AdminDashboardComponent } from './main-app/admin/admin-dashboard.component';
 import { AdminHeaderComponent } from './main-app/admin/admin-header/admin-header.component';
+import { GroupsComponent } from './main-app/admin/groups/groups.component';
+import { AddGroupDialogComponent } from './main-app/admin/groups/add-group-dialog/add-group-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { EditGroupComponent } from './main-app/admin/groups/edit-group/edit-group.component';
+import { EditStudentsComponent } from './main-app/admin/groups/edit-group/edit-students/edit-students.component';
+import { AddStudentsModalComponent } from './main-app/admin/groups/edit-group/edit-students/add-students-modal/add-students-modal.component';
+import { MultipleSelectComponent } from './shared/components/multiple-select/multiple-select.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,13 +43,23 @@ import { AdminHeaderComponent } from './main-app/admin/admin-header/admin-header
     StudentDashboardComponent,
     StudentHeaderComponent,
     AdminDashboardComponent,
-    AdminHeaderComponent
+    AdminHeaderComponent,
+    GroupsComponent,
+    AddGroupDialogComponent,
+    EditGroupComponent,
+    EditStudentsComponent,
+    AddStudentsModalComponent,
+    MultipleSelectComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    FormsModule,
+    MatDialogModule,
     BrowserModule,
     AppRoutingModule,
+    MatAutocompleteModule,
+    MatSelectModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MatToolbarModule,

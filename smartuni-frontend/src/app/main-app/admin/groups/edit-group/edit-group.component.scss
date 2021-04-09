@@ -1,0 +1,24 @@
+@import "../../../../../assets/styles.scss";
+
+.container {
+    margin: 10px;
+    background: mat-color($app-primary);
+    padding: 16px;
+}
+.header {
+    display: flex;
+    align-items: center;
+    button {
+        color: mat-color($app-warn);
+    }
+}
+.title {
+    color: mat-color($app-warn);
+    font-size: 22px;
+    font-weight: normal;
+    margin-right: 20px;
+    flex-grow: 1;
+}
+.content {
+    display: flex;
+}

@@ -1,0 +1,24 @@
+<div class="group-container-scroll">
+    <div class="group-container">
+        <div *ngFor="let group of groups" class="group-selector">
+            <div>
+                <p>
+                    Name: {{group.name}} Year: {{group.year}}
+                </p>
+                <p>
+                    {{group.stundentNumber}} students
+                </p>
+            </div>
+            <button mat-icon-button (click)="selectedGroup = group">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button (click)="deleteGroup(group.id)">
+                <mat-icon>delete</mat-icon>
+            </button>
+
+        </div>
+    </div>
+    <button mat-button mat-raised-button color="accent" (click)="openDialog()" style="margin: 10px">Add Group</button>
+    <edit-group *ngIf="selectedGroup !== null" [groupName]="selectedGroup.name" [groupYear]="selectedGroup.year"
+        [groupId]="selectedGroup.id" (closeGroupEditor)="selectedGroup = null" (updateGroupData)="updateDataBallback($event)"></edit-group>
+</div>

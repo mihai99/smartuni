@@ -1,0 +1,27 @@
+@import "../../../../assets/styles.scss";
+
+.group-container-scroll {
+    overflow: auto;
+}
+.group-container {
+    display: flex;
+    overflow-x: auto;
+    width: max-content;
+}
+.group-selector {
+    display: flex;
+    background: mat-color($app-primary);
+    color: mat-color($app-warn);
+    margin: 10px;
+    box-shadow: border-box;
+    padding: 8px;
+    p {
+        margin: 2px;
+    }
+    button:first-of-type {
+        margin-left: 12px;
+    }
+    button:hover {
+        background: radial-gradient(mat-color($app-warn) 0%, transparent 75%);
+    }
+}

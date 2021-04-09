@@ -1,0 +1,22 @@
+<span>Student name:</span>
+<form class="example-form">
+    <mat-form-field style="width: 100%;">
+      <input type="text"
+             matInput
+             [formControl]="searchControl"
+             [matAutocomplete]="auto">
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions" [value]="option.value" (click)="selectOption(option)">
+          {{option.description}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+  <div class="selected-options-container">
+      <div *ngFor="let option of selectedOptions; let i = index" class="selected-option">
+          {{option.description}}
+          <button mat-icon-button (click)="selectedOptions.splice(i, 1)">
+              <mat-icon>close</mat-icon>
+          </button>
+      </div>
+  </div>
