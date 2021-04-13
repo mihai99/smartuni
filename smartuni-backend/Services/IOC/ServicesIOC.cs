@@ -10,6 +10,10 @@ namespace Services.IOC
 		public static void AddServices(this IServiceCollection services)
 		{
 			services.AddScoped<IGroupService, GroupService>();
+			services.AddScoped<IStudentService, StudentService>();
+			services.AddScoped<IFirebaseService, FirebaseService>();
+			services.AddScoped<ICourseService, CourseService>();
+			services.AddScoped<ITeacherService, TeacherService>();
 		}
 	}
 }

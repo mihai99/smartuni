@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 using Domain.Interfaces;
 using Presentation.DTOs;
 using Domain.EntityMapers;
-
+using Presentation.ApiUtils;
 
 namespace Presentation.Controllers
 {
@@ -24,6 +24,13 @@ namespace Presentation.Controllers
 		}
 
 		[HttpGet]
+		[Route("with-students")]
+		public IEnumerable<MappedGroupWithStudents> GetWithStudents()
+		{
+			return groupService.GetAllWithStudents();
+		}
+
+        [HttpGet]
 		public IEnumerable<MappedGroup> Get()
 		{
 			return groupService.GetAll();
@@ -44,20 +51,47 @@ namespace Presentation.Controllers
 			}
 		}
 
-		[Route("update-students")]
+		[Route("{groupId}/add-students")]
 		[HttpPut]
-		public ActionResult<MappedGroup> UpdateGroupStudents([FromBody] GroupStudentsDTO groupStudents)
+		public ActionResult<List<MappedStudent>> AddGroupStudents([FromRoute] string groupId, [FromBody] GroupStudentsDTO groupStudents)
 		{
-			MappedGroup updatedGroup = groupService.UpdateGroupStudents(groupStudents.groupId, groupStudents.studentIds);
-
-			if (updatedGroup != null)
+			List<MappedStudent> updatedGroupStudents = groupService.AddStudentsToGroup(groupId, groupStudents.studentIds);
+			if (updatedGroupStudents != null)
 			{
-				return Ok(updatedGroup);
+				return Ok(updatedGroupStudents);
 			}
 			else
 			{
 				return BadRequest();
 			}
 		}
+
+		[Route("{groupId}/remove-students")]
+		[HttpPut]
+		public ActionResult<List<MappedStudent>> RemoveGroupStudents([FromRoute] string groupId, [FromBody] GroupStudentsDTO groupStudents)
+		{
+			List<MappedStudent> updatedGroupStudents = groupService.RemoveStudentsToGroup(groupId, groupStudents.studentIds);
+			if (updatedGroupStudents != null)
+			{
+				return Ok(updatedGroupStudents);
+			}
+			else
+			{
+				return BadRequest();
+			}
+		}
+
+		[HttpDelete("{id}")]
+		public ActionResult<bool> DeleteGroup([FromRoute] string id)
+        {
+			bool deleteResult = groupService.DeleteGroup(id);
+			if(deleteResult)
+            {
+				return NoContent();
+            } else
+            {
+				return BadRequest();
+            }
+        }
 	}
 }

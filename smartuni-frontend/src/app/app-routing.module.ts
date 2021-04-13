@@ -8,6 +8,7 @@ import { StudentDashboardComponent } from './main-app/student/student-dashboard/
 import { AngularFireAuthGuard, redirectLoggedInTo } from "@angular/fire/auth-guard";
 import { AdminDashboardComponent } from './main-app/admin/admin-dashboard.component';
 import { GroupsComponent } from './main-app/admin/groups/groups.component';
+import { StudentsComponent } from './main-app/admin/students/students.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,7 @@ const routes: Routes = [
     canActivate: [AngularFireAuthGuard],
     children: [
       {path: 'groups', component: GroupsComponent},
+      {path: 'students', component: StudentsComponent},
     ]
   }
 ];

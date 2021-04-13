@@ -1,0 +1,41 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.instruments {
+  display: flex;
+  height: 40px;
+  margin-bottom: 20px;
+  .instruments {
+    margin-right: 40px;
+  }
+}
+.container {
+  padding: 20px;
+}
+.action-button {
+  margin-left: 20px;
+  min-width: 150px;
+}
+
+.container {
+  ::ng-deep .mat-form-field {            
+    .mat-form-field-label {
+        color: black !important;
+    }
+    .mat-form-field-underline {
+        background-color: black !important;
+    } 
+    .mat-form-field-ripple {
+        display: none;
+    }
+    .mat-form-field-flex {
+        padding: 0px ;
+    }
+  }
+}

@@ -39,9 +39,11 @@ $app-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
             font-size: 18px;
             font-weight: 100;
         }
-        .mat-form-field-underline::before {
+        .mat-form-field-underline{
+            height: 1px !important;
+            &::before {
             background-color: mat-color($color) !important;
-        } 
+        } }
         .mat-select-value {
             color:  mat-color($color) !important;
             font-size: 18px;

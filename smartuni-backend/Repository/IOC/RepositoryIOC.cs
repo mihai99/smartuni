@@ -9,9 +9,11 @@ namespace Repository.IOC
 	{
 		public static void AddDataAccess(this IServiceCollection services)
 		{
-			services.AddScoped<DbContext, EntityFrameworkContext>();
+			services.AddSingleton<DbContext, EntityFrameworkContext>();
 			services.AddScoped<IRepository<Student>, StudentsRepository>();
 			services.AddScoped<IRepository<Group>, GroupRepository>();
+			services.AddScoped<IRepository<Course>, CourseRepository>();
+			services.AddScoped<IRepository<Teacher>, TeacherRepository>();
 		}
 	}
 }

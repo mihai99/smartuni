@@ -21,24 +21,32 @@ namespace Repository
 		public Group Create(Group instance)
 		{
 			var createdGroup = context.Add(instance);
-			context.SaveChanges();
 			return createdGroup.Entity;
 		}
 
-		public List<Group> GetAll()
+		public void Delete(Group instance)
+        {
+			context.Remove(instance);
+		}
+
+        public List<Group> GetAll()
 		{
 			return context.Set<Group>().Include(x => x.Students).ToList();
 		}
 
 		public Group GetById(string id)
 		{
-			return context.Set<Group>().SingleOrDefault(x => x.Id == System.Guid.Parse(id));
+			return context.Set<Group>().Include(x => x.Students).SingleOrDefault(x => x.Id == System.Guid.Parse(id));
 		}
 
-		public Group Update(Group instance)
+        public void Save()
+        {
+			context.SaveChanges();
+        }
+
+        public Group Update(Group instance)
 		{
 			var updatedGroup = context.Update(instance);
-			context.SaveChanges();
 			return updatedGroup.Entity;
 		}
 	}

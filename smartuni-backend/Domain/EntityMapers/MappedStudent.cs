@@ -10,6 +10,8 @@ namespace Domain.EntityMapers
 		public string Email { get; set; }
 		public string PhoneNumber { get; set; }
 		public string NumericCode { get;  set; }
+        public int Year { get; set; }
+        public string GroupName { get; set; }
         public Guid GroupId { get; set; }
     }
 
@@ -25,7 +27,10 @@ namespace Domain.EntityMapers
                 Email = student.Email,
                 PhoneNumber = student.PhoneNumber,
                 NumericCode = student.NumericCode,
-                GroupId = student.Group.Id,
+                Year = student.Group != null ? student.Group.Year : 0,
+                GroupName = student.Group != null ? student.Group.Name : "",
+                GroupId = student.Group != null ? student.Group.Id : Guid.Empty,
+
             };
         }
     }

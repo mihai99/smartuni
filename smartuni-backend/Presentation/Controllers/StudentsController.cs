@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Domain.Interfaces;
-using Domain;
+using Domain.EntityMapers;
 using Presentation.DTOs;
 
 namespace Presentation.Controllers
@@ -14,24 +14,30 @@ namespace Presentation.Controllers
 	[Route("api/[controller]")]
 	public class StudentsController : ControllerBase
 	{
-		private readonly IRepository<Student> repository;
+		private readonly IStudentService studentService;
 
-
-		public StudentsController(IRepository<Student> repository)
+		public StudentsController(IStudentService studentService)
 		{
-			this.repository = repository;
+			this.studentService = studentService;
 		}
 
 		[HttpGet]
-		public IEnumerable<Student> Get()
+		public IEnumerable<MappedStudent> Get()
 		{
-			return repository.GetAll();
+			return studentService.GetAll();
 		}
 
+		[HttpGet]
+		[Route("in-group/{groupId}")]
+		public ActionResult<List<MappedStudent>> GetStudentsFromGroup([FromRoute] string groupId)
+        {
+			return Ok(studentService.GetByGroupId(groupId));
+        }
+
 		[HttpPost]
-		public async Task<ActionResult<Student>> CreateStudentAccount([FromBody] StudentDTO student)
+		public async Task<ActionResult<MappedStudent>> CreateStudentAccount([FromBody] StudentDTO student)
 		{
-			Student createdStudent = repository.Create(Student.Create(student.Id, student.FirstName, student.LastName, student.Email, student.PhoneNumber, student.NumericCode));
+			MappedStudent createdStudent = await studentService.Create(student.FirstName, student.LastName, student.Email, student.PhoneNumber, student.NumericCode);
 			if (createdStudent != null)
 			{
 				return CreatedAtAction("CreateStudentAccount", createdStudent);
@@ -40,7 +46,13 @@ namespace Presentation.Controllers
 			{
 				return BadRequest();
 			}
-
 		}
+
+		[HttpDelete("{studentId}")]
+		public ActionResult DeleteStudents([FromRoute] string studentId)
+        {
+			studentService.DeleteStudents(new string[] { studentId });
+			return NoContent();
+        }
 	}
 }

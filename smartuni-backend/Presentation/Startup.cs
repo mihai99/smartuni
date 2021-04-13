@@ -15,6 +15,9 @@ using Repository;
 using Microsoft.EntityFrameworkCore;
 using Repository.IOC;
 using Services.IOC;
+using FirebaseAdmin;
+using Google.Apis.Auth.OAuth2;
+using Presentation.ApiUtils;
 
 namespace Presentation
 {
@@ -71,12 +74,19 @@ namespace Presentation
 
 			app.UseCors(AllowFrontendRequests);
 
+			app.UseMiddleware<JwtMiddleware>();
+
 			app.UseAuthorization();
 
 			app.UseEndpoints(endpoints =>
 			{
 				endpoints.MapControllers();
 			});
+
+			FirebaseApp.Create(new AppOptions()
+			{
+				Credential = GoogleCredential.FromFile("./smartuni-927a2-firebase-adminsdk-vlgcq-a9455fb8e8.json")
+			}); ;
 		}
 	}
 }

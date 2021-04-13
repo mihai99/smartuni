@@ -25,9 +25,14 @@ namespace Repository
 			return createdStudent.Entity;
 		}
 
-		public List<Student> GetAll()
+        public void Delete(Student instance)
 		{
-			return context.Set<Student>().ToList();
+			context.Remove(instance);
+		}
+
+        public List<Student> GetAll()
+		{
+			return context.Set<Student>().Include(x => x.Group).ToList();
 		}
 
 		public Student GetById(string id)
@@ -35,10 +40,14 @@ namespace Repository
 			return context.Set<Student>().SingleOrDefault(x => x.Id == id);
 		}
 
-		public Student Update(Student instance)
+        public void Save()
+        {
+			context.SaveChanges();
+        }
+
+        public Student Update(Student instance)
 		{
 			var updatedStudent = context.Update(instance);
-			context.SaveChanges();
 			return updatedStudent.Entity;
 		}
 	}

@@ -33,6 +33,14 @@ import { AddStudentsModalComponent } from './main-app/admin/groups/edit-group/ed
 import { MultipleSelectComponent } from './shared/components/multiple-select/multiple-select.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { StudentsComponent } from './main-app/admin/students/students.component';
+import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatSortModule } from '@angular/material/sort';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { CreateStudentComponent } from './main-app/admin/students/create-student/create-student.component';
+import { TimetableComponent } from './main-app/admin/timetable/timetable.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,18 +57,25 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     EditGroupComponent,
     EditStudentsComponent,
     AddStudentsModalComponent,
-    MultipleSelectComponent
+    MultipleSelectComponent,
+    StudentsComponent,
+    CreateStudentComponent,
+    TimetableComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     FormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatCheckboxModule,
     MatDialogModule,
     BrowserModule,
     AppRoutingModule,
     MatAutocompleteModule,
     MatSelectModule,
     BrowserAnimationsModule,
+    MatSortModule,
     HttpClientModule,
     MatToolbarModule,
     MatSnackBarModule,

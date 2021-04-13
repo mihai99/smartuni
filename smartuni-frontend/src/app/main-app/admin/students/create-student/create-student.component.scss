@@ -1,0 +1,13 @@
+@import '../../../../../assets/styles.scss';
+
+    .input {
+        font-size: 16px;
+        width: 100%;
+        padding-bottom: 4px;
+        color: mat-color($app-warn);
+    }
+
+    .form {
+        @include text-input($app-warn);
+        @include select-input($app-warn);
+    }

@@ -19,33 +19,79 @@ namespace Services
 			this.groupRepository = groupRepository;
 			this.studentRepository = studentRepository;
 		}
-		public MappedGroup CreateGroup(string name, int year)
+
+        public List<MappedStudent> AddStudentsToGroup(string groupId, List<string> studentIds)
+        {
+			var groupToUpdate = groupRepository.GetById(groupId);
+			if (groupToUpdate == null)
+			{
+				return null;
+			}
+			var studentList = studentRepository.GetAll().Where(x => studentIds.Contains(x.Id)).ToList();
+			studentList.ForEach(student =>
+			{
+				if (student.Group != null)
+				{
+					student.Group.Students.Remove(student);
+					groupRepository.Update(student.Group);
+				}
+			});
+			groupToUpdate.UpdateStudentList(studentList);
+			groupRepository.Update(groupToUpdate);
+			groupRepository.Save();
+			return groupToUpdate.Students.Select(x => x.Map()).ToList();
+		}
+
+        public MappedGroup CreateGroup(string name, int year)
 		{
 			var createdGroup = groupRepository.Create(Group.Create(name, year));
+			groupRepository.Save();
 			return createdGroup.Map();
 		}
 
-		public List<MappedGroup> GetAll()
+        public bool DeleteGroup(string id)
+        {
+			var group = this.groupRepository.GetById(id);
+			group.Students.ForEach(x => {
+				x.Group = null;
+				studentRepository.Update(x);
+			});
+			groupRepository.Delete(group);
+			groupRepository.Save();
+			return true;
+        }
+
+        public List<MappedGroup> GetAll()
 		{
 			return groupRepository.GetAll().Select(x => x.Map()).ToList();
 		}
 
-		public MappedGroup GetById(string id)
+        public List<MappedGroupWithStudents> GetAllWithStudents()
+        {
+			return groupRepository.GetAll().Select(x => x.MapWithStudents()).ToList();
+		}
+
+        public MappedGroup GetById(string id)
 		{
 			return groupRepository.GetById(id).Map();
 		}
 
-		public MappedGroup UpdateGroupStudents(string groupId, List<string> studentIds)
-		{
+        public List<MappedStudent> RemoveStudentsToGroup(string groupId, List<string> studentIds)
+        {
 			var groupToUpdate = groupRepository.GetById(groupId);
-			var studentList = studentRepository.GetAll().Where(x => studentIds.Contains(x.Id)).ToList();
-			/*studentList.ForEach(x => {
-				x.Group = groupToUpdate;
-				studentRepository.Update(x);
-			});*/
-			groupToUpdate.UpdateStudentList(studentList);
+			studentIds.ForEach(id =>
+			{
+				var student = studentRepository.GetById(id);
+				if (student != null && groupToUpdate.Students.Contains(student))
+				{
+					student.Group = null;
+					studentRepository.Update(student);
+					groupToUpdate.Students.Remove(student);
+				}
+			});
 			groupRepository.Update(groupToUpdate);
-			return groupToUpdate.Map();
+			groupRepository.Save();
+			return groupToUpdate.Students.Select(x => x.Map()).ToList();
 		}
 	}
 }

@@ -1,0 +1,55 @@
+<h2 mat-dialog-title>Create new student account</h2>
+<mat-dialog-content class="mat-typography form">
+    <form [formGroup]="createAccountForm">
+        <mat-form-field class="input">
+            <mat-label>Email*</mat-label>
+            <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+            <mat-error style="color:red;" *ngIf="email.hasError('email') && !email.hasError('required')">
+                Please enter a valid email address
+            </mat-error>
+            <mat-error style="color:red;" *ngIf="email.hasError('required')">
+                Email is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input">
+            <mat-label>First Name*</mat-label>
+            <input type="text" matInput formControlName="firstName" placeholder="Ex. Jhon" >
+            <mat-error style="color:red;" *ngIf="numericCode.hasError('required')">
+                First Name is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input">
+            <mat-label>Last Name*</mat-label>
+            <input type="text" matInput formControlName="lastName" placeholder="Ex. Doe">
+            <mat-error style="color:red;" *ngIf="numericCode.hasError('required')">
+                Last Name is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input">
+            <mat-label>Phone number*</mat-label>
+            <input type="text" matInput formControlName="phone" placeholder="Ex. 023142134">
+            <mat-error style="color:red;" *ngIf="numericCode.hasError('required')">
+                Phone number is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input">
+            <mat-label>University numeric code*</mat-label>
+            <input type="text" matInput formControlName="numericCode" placeholder="Ex. RSL#2132RF0234">
+            <mat-error style="color:red;" *ngIf="numericCode.hasError('required')">
+                University numeric code is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="group" class="input" >
+            <mat-label>Group</mat-label>
+            <mat-select formControlName="group">
+              <mat-option *ngFor="let group of groups" [value]="group">
+                Year: {{group.year}}, Name: {{group.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button cdkFocusInitial mat-raised-button color="accent" (click)="createStudent()">Create</button>
+</mat-dialog-actions>

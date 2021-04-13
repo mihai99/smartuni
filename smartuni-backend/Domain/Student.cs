@@ -14,8 +14,8 @@ namespace Domain
 		public string Email { get; private set; }
 		public string PhoneNumber { get; private set; }
 		public string NumericCode { get; private set; }
-
-		public Group Group { get; set; }
+		public bool HasChangedPassword { get; private set; }
+		public Group? Group { get; set; }
 		private Student() {}
 
 		public static Student Create(string Id, string FirstName, string LastName, string Email, string PhoneNumber, string NumericCode)
@@ -28,6 +28,7 @@ namespace Domain
 				Email = Email,
 				PhoneNumber = PhoneNumber,
 				NumericCode = NumericCode,
+				HasChangedPassword = false,
 			};
 		}
 

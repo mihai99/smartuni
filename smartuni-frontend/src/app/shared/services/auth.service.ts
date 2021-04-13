@@ -13,15 +13,19 @@ export class AuthService {
     public afAuth: AngularFireAuth,
     private httpService: HttpClient,
     private notificationsService: NotificationsService
-  ) { 
+  ) {
     this.afAuth.authState.subscribe(user => {
-      if(user) {
-        this.userData = user;
-        localStorage.setItem('user', JSON.stringify(this.userData));
-      } else {
-        localStorage.setItem('user', null);
+      if (user) {
+        this.getJwtToken();
       }
     })
+  }
+
+  private async getJwtToken() {
+    const currentUser = await this.afAuth.currentUser;
+    const jwtToken = await currentUser.getIdToken();
+    localStorage.setItem("jwtToken", jwtToken);
+    setTimeout(() => this.getJwtToken(), 30*60*1000);
   }
 
   public async SingIn(email, password) {
@@ -29,7 +33,7 @@ export class AuthService {
       const loginResult = await this.afAuth.signInWithEmailAndPassword(email, password);
       return loginResult;
     }
-    catch(e) {
+    catch (e) {
       console.log(e);
       this.notificationsService.ShowError(e.message, 3000);
       return Promise.resolve(false);
@@ -38,12 +42,12 @@ export class AuthService {
 
   public async SignUp(email, password, firstName, lastName, phoneNumber, numericCode) {
     const firebaseCreateAccount = await this.afAuth.createUserWithEmailAndPassword(email, password);
-    if(!firebaseCreateAccount) {
+    if (!firebaseCreateAccount) {
       return Promise.reject(false);
     }
-    const createAccountDetails = await this.httpService.post("https://localhost:44393/api/Students", 
+    const createAccountDetails = await this.httpService.post("https://localhost:44393/api/Students",
       {
-        "id":  firebaseCreateAccount.user.uid,
+        "id": firebaseCreateAccount.user.uid,
         "firstName": firstName,
         "lastName": lastName,
         "email": email,
@@ -51,7 +55,7 @@ export class AuthService {
         "numericCode": numericCode
       }
     ).toPromise();
-    if(!createAccountDetails) {
+    if (!createAccountDetails) {
       return Promise.reject(false);
     }
     return Promise.resolve(createAccountDetails);
@@ -62,7 +66,7 @@ export class AuthService {
   }
   private SendVerificationEmail() {
     return this.afAuth.currentUser.then(async currentUser => {
-      if(currentUser) {
+      if (currentUser) {
         await currentUser.sendEmailVerification();
         return true;
       } else {

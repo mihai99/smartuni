@@ -14,7 +14,7 @@ namespace Domain
 		public List<Student> Students { get; private set; }
 		public string GroupLeaderId { get; private set; }
 
-		private Group() { }
+        private Group() { }
 
 		public static Group Create(string name, int year)
 		{
@@ -30,7 +30,7 @@ namespace Domain
 		public List<Student> UpdateStudentList(List<Student> students)
 		{
 			students.ForEach(student => student.Group = this);
-			Students = students;
+			Students.AddRange(students.Where(x => !Students.Contains(x)));
 			return Students;
 		}
 	}

@@ -9,7 +9,7 @@ namespace Domain.EntityMapers
         public Guid Id { get; set; }
         public int Year { get; set; }
         public string Name { get; set; }
-        public List<MappedStudent> Students { get; set; }
+        public int StundentNumber { get; set; }
     }
 
     public static class GroupMapper
@@ -21,12 +21,8 @@ namespace Domain.EntityMapers
                 Id = group.Id,
                 Year = group.Year,
                 Name = group.Name,
-                Students = new List<MappedStudent>(),
+                StundentNumber = group.Students.Count,
             };
-            if(group.Students != null && group.Students.Count > 0)
-            {
-                mappedGroup.Students = group.Students.Select(x => x.Map()).ToList();
-            }
             return mappedGroup;
         }
     }

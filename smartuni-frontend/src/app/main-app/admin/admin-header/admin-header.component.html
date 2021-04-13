@@ -1,10 +1,16 @@
 <mat-toolbar color="primary">
     <span class="app-name">SmartUni</span>
-    <button mat-button color="accent" aria-label="Example icon-button with share icon">
+    <button mat-button color="accent" aria-label="Example icon-button with share icon" [routerLink]="['/admin/students']" routerLinkActive="router-link-active" >
+        Students
+    </button>
+    <button mat-button color="accent" aria-label="Example icon-button with share icon" [routerLink]="['/admin/groups']" routerLinkActive="router-link-active" >
         Groups
     </button>
     <button mat-button color="accent" aria-label="Example icon-button with heart icon">
         Timetable
+    </button>
+    <button mat-button color="accent" aria-label="Example icon-button with heart icon">
+        Courses
     </button>
     <button mat-button color="accent" aria-label="Example icon-button with heart icon">
         Teachers

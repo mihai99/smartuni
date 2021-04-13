@@ -13,7 +13,11 @@ export class GroupsService {
   ) { }
 
   public async getAllGroups(): Promise<any[]> {
-    const allGroups = await this.httpService.get<any[]>("https://localhost:44393/api/Group").toPromise();
+    const allGroups = await this.httpService.get<any[]>("https://localhost:44393/api/Group", {
+      headers: {
+        "Authorization": `Bearer ${localStorage.getItem("jwtToken")}`
+      }
+    }).toPromise();
     return allGroups;
   }
 
